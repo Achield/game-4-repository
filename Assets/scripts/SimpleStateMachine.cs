@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SimpleStateMachine : MonoBehaviour
 {
+    public float speed = 0.001f;
+    public float time = 10f;
+    public float percentage;
+    bool colorChange;
+
     // here is an enumerable, this will track the color of the object's material
     public enum stateMode
     {
@@ -22,6 +27,7 @@ public class SimpleStateMachine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        colorChange = false;
         myRend = GetComponent<Renderer>();
         myMat = myRend.material;
     }
@@ -59,10 +65,31 @@ public class SimpleStateMachine : MonoBehaviour
                 break;
         }
 
-
+        if (myMat.color != targetCol && colorChange)
+        {
+            percentage = RampFloat(time, 0, time, 0, 1);
+            StartCoroutine(SetColor(targetCol, time));
+        }
 
         // more regualr update code goes here, probably something that depends on what mode the script is in
-
-
     }
+
+    public static float RampFloat(float value, float from1, float to1, float from2, float to2)
+    {
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+    }
+
+    IEnumerator SetColor(Color c, float t)
+    {
+        while (t >= 0)
+        {
+            t -= speed;
+            percentage = RampFloat(t, 0, t, 0, 1);
+            myMat.color = Color.Lerp(myMat.color, c, 1 - t);
+            yield return new WaitForSeconds(speed);
+        }
+        colorChange = false;
+    }
+
+
 }
