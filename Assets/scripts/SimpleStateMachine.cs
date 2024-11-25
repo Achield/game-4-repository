@@ -38,7 +38,7 @@ public class SimpleStateMachine : MonoBehaviour
         // to determine what code to run based off the current state of our myMode variable
         // we're going to use a switch statement
 
-        switch (myMode)   // for ecah potential state or mode, declare a "case" and then write any relevant code for that mode
+        switch (myMode)   // for each potential state or mode, declare a "case" and then write any relevant code for that mode
         {
             case stateMode.RED:
                 myMat.color = Color.red;
@@ -65,12 +65,12 @@ public class SimpleStateMachine : MonoBehaviour
                 break;
         }
 
-        if (myMat.color != targetCol && colorChange)
+       /* if (myMat.color != targetCol && colorChange)
         {
             percentage = RampFloat(time, 0, time, 0, 1);
             StartCoroutine(SetColor(targetCol, time));
         }
-
+       */
         // more regualr update code goes here, probably something that depends on what mode the script is in
     }
 

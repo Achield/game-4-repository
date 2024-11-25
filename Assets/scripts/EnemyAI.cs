@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 
+/*
 public class EnemyAI : MonoBehaviour
 {
     private EnemyPathfindingMovement pathfindingMovement;
@@ -23,3 +24,4 @@ public class EnemyAI : MonoBehaviour
         return startingPosition + UtilsClass.GetRandomDir() * Random.Range(10f, 70f);
     }
 }
+*/
