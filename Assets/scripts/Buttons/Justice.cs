@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class Justice : MonoBehaviour
 {
-    private void OnMouseDownAsButton()
+    public bool CLICKED;
+
+    public void Start()
+    {
+        CLICKED = false;
+    }
+    public void OnMouseDownAsButton()
     {
         Debug.Log("JUSTICE!!!");
     }
+
+    public void Interact()
+    {
+        Debug.Log("JUSTICE!");
+        //state = MOOD.GOOD;
+        //bool CLICKED = true;
+    }
+
 }

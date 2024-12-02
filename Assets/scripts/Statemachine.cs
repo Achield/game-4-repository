@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Statemachine : MonoBehaviour
 {
+    public GameObject ENTITY;
+    private Justice justiceScript;
     bool stateComplete;
     Material myMat;
+    Renderer myRend;
 
     private void Start()
     {
-        myMat = GetComponent<Material>();
+        myRend = GetComponent<Renderer>();
+        myMat = myRend.material;
+
     }
 
     public enum MOOD
