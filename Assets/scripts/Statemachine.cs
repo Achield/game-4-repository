@@ -9,12 +9,17 @@ public class Statemachine : MonoBehaviour
     bool stateComplete;
     Material myMat;
     Renderer myRend;
+    public GameObject happyFace;
+    public GameObject neutralFace;
+    public GameObject angryFace;
 
     private void Start()
     {
         myRend = GetComponent<Renderer>();
         myMat = myRend.material;
-
+        happyFace = GameObject.Find("Happy");
+        neutralFace = GameObject.Find("Neutral");
+        angryFace = GameObject.Find("Angry");
     }
 
     public enum MOOD

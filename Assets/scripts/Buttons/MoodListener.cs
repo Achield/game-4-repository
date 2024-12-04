@@ -22,5 +22,4 @@ public class MoodListener : MonoBehaviour
         Debug.Log("PROFESSIONAL!");
         myMachine.UpdateState(targetMood);
     }
-
 }
