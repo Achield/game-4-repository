@@ -19,7 +19,7 @@ public class MoodListener : MonoBehaviour
 
     public void Interact()
     {
-        Debug.Log("PROFESSIONAL!");
+        // Debug.Log("PROFESSIONAL!");
         myMachine.UpdateState(targetMood);
     }
 }

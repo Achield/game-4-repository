@@ -8,6 +8,7 @@ public class PlayerCam : MonoBehaviour
     public float sensY;
 
     public Transform orientation;
+    public bool debugs;
 
     float xRotation;
     float yRotation;
@@ -16,6 +17,7 @@ public class PlayerCam : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Debug.DrawRay(transform.position, transform.forward, Color.green);
     }
 
     private void Update()
@@ -32,6 +34,11 @@ public class PlayerCam : MonoBehaviour
         // Rotate cam and orientation
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+
+        if (debugs)
+        {
+            Debug.DrawRay(transform.position, transform.forward*5, Color.green);
+        }
     }
 
 
