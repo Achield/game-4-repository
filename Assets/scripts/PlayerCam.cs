@@ -37,7 +37,7 @@ public class PlayerCam : MonoBehaviour
 
         if (debugs)
         {
-            Debug.DrawRay(transform.position, transform.forward*5, Color.green);
+            Debug.DrawRay(transform.position, transform.forward*6, Color.red);
         }
     }
 

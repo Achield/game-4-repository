@@ -139,7 +139,7 @@ public class Statemachine : MonoBehaviour
                 Debug.Log("HOW DID YOU BREAK IT ALREADY");
                 break;
         }
-
+        StartCoroutine("colorDelayN1");
         stateComplete = true;
     }
 
@@ -158,6 +158,15 @@ public class Statemachine : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         myMat.color = Color.white;
+    }
+
+    IEnumerator colorDelayN1()
+    {
+        yield return new WaitForSeconds(3);
+        myMat.color = Color.white;
+        angryFace.transform.localScale = Vector3.zero;
+        neutralFace.transform.localScale = Vector3.one;
+        faceThing += 1;
     }
 
 

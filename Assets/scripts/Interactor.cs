@@ -36,6 +36,9 @@ public class Interactor : MonoBehaviour
             lastUsedTime = Time.time;
             canClick = false;
         }
+
+
+
         //else
         //{
         //    clickCoolDown -= Time.deltaTime;
